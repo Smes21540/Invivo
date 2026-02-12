@@ -1434,6 +1434,8 @@ async function loadRootFolders(){
   const sites = coopFolders
     .filter(isDriveFolderOrShortcutFolder)
     .sort((a,b)=>a.name.localeCompare(b.name,'fr',{sensitivity:'base'}));
+  renderRootTiles(sites);
+
 
   // Pas de tuiles racine en coop
   hideSiteTiles();
@@ -1449,7 +1451,7 @@ async function loadRootFolders(){
 
     const span = document.createElement('span');
     span.className = 'folder-name';
-    span.innerHTML = `📁 ${site.name}`;
+    span.innerHTML = `📕 ${site.name}`;
 
     span.onclick = async (e)=>{
       e?.stopPropagation?.();
@@ -3778,4 +3780,5 @@ function clearBrowserCache() {
 
 </body>
 </html>
+
 
